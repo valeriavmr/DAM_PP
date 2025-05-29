@@ -34,4 +34,8 @@
     <string name="about_linea_4">"Adiestramiento positivo CABA</string>
     <string name="about_linea_5">Técnicas modernas con amor</string>
     <string name="about_linea_6">Consultas por mensaje directo"</string>
+    <string name="titulo_adiestramiento">Servicio de adiestramiento canino</string>
+    <string name="adiestramiento_btn">Solicita una servicio de adiestramiento</string>
+    <string name="titulo_veterinario">Servicio de clínica veterinaria</string>
+    <string name="veterinario_btn">¡Solicita una cita para tu mascota!</string>
 </resources>

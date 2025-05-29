@@ -14,6 +14,10 @@
         android:icon="@drawable/servicios">
         <menu>
             <item
+                android:id="@+id/menu_home_adiestramiento"
+                android:title="Adiestramiento canino"
+                android:icon="@drawable/adiestrar_icon_100"/>
+            <item
                 android:id="@+id/menu_home_banio"
                 android:title="Baños y cortes"
                 android:icon="@drawable/lavar_al_perro"/>
@@ -21,6 +25,10 @@
                 android:id="@+id/menu_home_paseos"
                 android:title="Paseos y cuidado"
                 android:icon="@drawable/caminando_con_perro"/>
+            <item
+                android:id="@+id/menu_home_veterinario"
+                android:title="Veterinario"
+                android:icon="@drawable/veterinario_icon"/>
         </menu>
     </item>
 

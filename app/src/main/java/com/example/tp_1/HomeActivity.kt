@@ -103,6 +103,8 @@ class HomeActivity : AppCompatActivity() {
                 R.id.menu_home_paseos ->{openFragment(PaseosFragment())}
                 R.id.menu_home_about ->{openFragment(AboutFragment())}
                 R.id.menu_home_miembros ->{openFragment(UsersFragment())}
+                R.id.menu_home_adiestramiento ->{openFragment(AdiestramientoFragment())}
+                R.id.menu_home_veterinario ->{openFragment(VeterinarioFragment())}
                 R.id.menu_home_logout ->{
 
                     //borro la data sobre el usuario loggeado y me voy a login
