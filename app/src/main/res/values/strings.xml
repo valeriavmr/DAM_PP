@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">TP_1</string>
+    <string name="login">Inicio de Sesión</string>
+    <string name="user_hint">Ingresa tu nombre de usuario</string>
+    <string name="pass_hint">Ingrese su contraseña</string>
+    <string name="btn_login">Iniciar Sesión</string>
+    <string name="btn_sin_cuenta">No tengo cuenta</string>
+    <string name="registro">Registro de cuenta</string>
+    <string name="nombre_hint">Ingrese su nombre</string>
+    <string name="apellido_hint">Ingrese su apellido</string>
+    <string name="email_hint">Ingrese su correo electrónico</string>
+    <string name="cel_hint">Ingrese su número telefónico</string>
+    <string name="btn_guardar_persona">Registrar cuenta</string>
+    <string name="condiciones">Acepto los términos y condiciones</string>
+    <string name="nombre_negocio">Adiestramiento canino Tahito</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bienvenido">Bienvenido</string>
+    <string name="btn_con_cuenta">Ya tengo una cuenta</string>
+    <string name="btn_contact_banio">Solicitar cita para baño</string>
+    <string name="btn_contact_paseo">Solicitar cita para paseo</string>
+    <string name="perfil_mascotas">Mascotas</string>
+    <string name="personas_miembros">Nuestros miembros</string>
+    <string name="text_add_mascota">Agregar mascota</string>
+    <string name="formulario_mascota">Registro nueva mascota</string>
+    <string name="nombre_mascota_hint">Ingresa el nombre de su mascota</string>
+    <string name="edad_mascota_hint">Ingrese la edad de la mascota en años</string>
+    <string name="sexo_mascota_text">Seleccione el sexo de la mascota</string>
+    <string name="volver_text">Volver a Inicio</string>
+    <string name="about_linea_1">Instagram: @adiestramientocanino_tahito</string>
+    <string name="about_linea_2">Zona: CABA, Argentina</string>
+    <string name="about_linea_3">Estrategia: cercanía + profesionalismo + utilidad</string>
+    <string name="about_linea_4">"Adiestramiento positivo CABA</string>
+    <string name="about_linea_5">Técnicas modernas con amor</string>
+    <string name="about_linea_6">Consultas por mensaje directo"</string>
+</resources>

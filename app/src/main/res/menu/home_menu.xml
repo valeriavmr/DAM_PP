@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+<item android:id="@+id/menu_home_perfil"
+    android:title="Perfil"
+    android:icon="@drawable/profile"/>
+
+    <item android:id="@+id/menu_home_mascotas"
+        android:title="Mascotas"
+        android:icon="@drawable/pets"/>
+
+    <item android:id="@+id/menu_home_servicios"
+        android:title="Nuestros servicios"
+        android:icon="@drawable/servicios">
+        <menu>
+            <item
+                android:id="@+id/menu_home_banio"
+                android:title="Baños y cortes"
+                android:icon="@drawable/lavar_al_perro"/>
+            <item
+                android:id="@+id/menu_home_paseos"
+                android:title="Paseos y cuidado"
+                android:icon="@drawable/caminando_con_perro"/>
+        </menu>
+    </item>
+
+    <item android:id="@+id/menu_home_about"
+        android:title="Sobre nosotros"
+        android:icon="@drawable/about"/>
+
+    <item android:id="@+id/menu_home_miembros"
+        android:title="Usuarios registrados"
+        android:icon="@drawable/users"
+        />
+
+    <item android:icon="@drawable/logout"
+        android:id="@+id/menu_home_logout"
+        android:title="Cerrar sesión"/>
+
+</menu>
