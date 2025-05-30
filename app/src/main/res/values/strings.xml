@@ -19,7 +19,7 @@
     <string name="bienvenido">Bienvenido</string>
     <string name="btn_con_cuenta">Ya tengo una cuenta</string>
     <string name="btn_contact_banio">Solicitar cita para baño</string>
-    <string name="btn_contact_paseo">Solicitar cita para paseo</string>
+    <string name="btn_contact_paseo">Inscríbete en el servicio de paseo</string>
     <string name="perfil_mascotas">Mascotas</string>
     <string name="personas_miembros">Nuestros miembros</string>
     <string name="text_add_mascota">Agregar mascota</string>
@@ -35,7 +35,9 @@
     <string name="about_linea_5">Técnicas modernas con amor</string>
     <string name="about_linea_6">Consultas por mensaje directo"</string>
     <string name="titulo_adiestramiento">Servicio de adiestramiento canino</string>
-    <string name="adiestramiento_btn">Solicita una servicio de adiestramiento</string>
+    <string name="adiestramiento_btn">Inscríbete al servicio de adiestramiento</string>
     <string name="titulo_veterinario">Servicio de clínica veterinaria</string>
     <string name="veterinario_btn">¡Solicita una cita para tu mascota!</string>
+    <string name="perfil_titulo">Perfil de usuario</string>
+    <string name="sobre_nosotros_text">Sobre Nosotros</string>
 </resources>

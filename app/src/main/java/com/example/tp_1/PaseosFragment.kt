@@ -65,7 +65,7 @@ class PaseosFragment : Fragment() {
         val btn_contacto = view.findViewById<Button>(R.id.button5)
 
         btn_contacto.setOnClickListener {
-            Toast.makeText(requireContext(), "¡Cita agendada! Te contactaremos",Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), "¡Solicitud agendada! Te contactaremos",Toast.LENGTH_LONG).show()
         }
     }
 }
