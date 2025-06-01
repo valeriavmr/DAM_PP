@@ -60,6 +60,8 @@ class MainActivity : AppCompatActivity() {
 
                 }
             }else{
+                user_name.error = getString(R.string.user_pass_error)
+                password.error = getString(R.string.user_pass_error)
                 Toast.makeText(this@MainActivity, getString(R.string.user_pass_error), Toast.LENGTH_SHORT).show()
             }
 
