@@ -40,4 +40,7 @@
     <string name="veterinario_btn">¡Solicita una cita para tu mascota!</string>
     <string name="perfil_titulo">Perfil de usuario</string>
     <string name="sobre_nosotros_text">Sobre Nosotros</string>
+    <string name="user_pass_error">Usuario o contraseña incorrectos</string>
+    <string name="solicitud_alerta">"¡Solicitud agendada! Te contactaremos"</string>
+    <string name="cita_alerta">"¡Cita agendada! Te contactaremos"</string>
 </resources>

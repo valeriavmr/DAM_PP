@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import androidx.core.content.edit
 
 
 class MainActivity : AppCompatActivity() {
@@ -40,12 +41,14 @@ class MainActivity : AppCompatActivity() {
                 lista_personas = Gson().fromJson(sharedPreferences?.getString("personas",""),type)
 
                 if(!validar_login(user_name.text.toString(), password.text.toString(),lista_personas)){
-                    Toast.makeText(this@MainActivity,"Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
+                    user_name.error = getString(R.string.user_pass_error)
+                    password.error = getString(R.string.user_pass_error)
+                    Toast.makeText(this@MainActivity,getString(R.string.user_pass_error), Toast.LENGTH_SHORT).show()
                 }else{
                     //guardo el nombre del usuario loggeado
-                    val editor = sharedPreferences?.edit()
-                    editor?.putString("usuario_loggeado",user_name.text.toString())
-                    editor?.apply()
+                    sharedPreferences?.edit {
+                        this.putString("usuario_loggeado", user_name.text.toString())
+                    }
 
                     //se loggea a la cuenta de la persona
                     val intent =Intent(this, HomeActivity::class.java)
@@ -57,7 +60,7 @@ class MainActivity : AppCompatActivity() {
 
                 }
             }else{
-                Toast.makeText(this@MainActivity, "Usuario o contraseña inválidos", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity, getString(R.string.user_pass_error), Toast.LENGTH_SHORT).show()
             }
 
 

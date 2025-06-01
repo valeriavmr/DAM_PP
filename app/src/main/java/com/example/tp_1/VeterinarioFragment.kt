@@ -65,7 +65,7 @@ class VeterinarioFragment : Fragment() {
         val btn_contacto = view.findViewById<Button>(R.id.button11)
 
         btn_contacto.setOnClickListener {
-            Toast.makeText(requireContext(), "¡Cita agendada! Te contactaremos",Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), getString(R.string.cita_alerta),Toast.LENGTH_LONG).show()
         }
     }
 }
