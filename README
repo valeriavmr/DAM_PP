@@ -1,0 +1,50 @@
+# 📱 DAM\_PP - Aplicación Móvil en Kotlin
+
+Aplicación desarrollada como parte del Proyecto de Programación para dispositivos móviles. Esta app está construida con Kotlin y está pensada para ejecutarse en dispositivos Android.
+Integrantes: 
+* Yuskeyli Avila / 
+* Rodrigo Cussi / 
+* Valeria Moreno / valeriavmr
+* Laura Nuñez / 
+* Jeimmy Ortiz / 
+
+## 🚀 Características
+
+* Desarrollada con **Kotlin**.
+* Arquitectura basada en Android Studio con **Gradle**.
+* Incluye interfaces de usuario diseñadas en XML.
+* Navegación entre pantallas.
+* Persistencia de datos local.
+
+## 🛠️ Requisitos
+
+* Android Studio Electric Eel o superior.
+* JDK 17 o superior.
+* Gradle 8.x
+* Un dispositivo/emulador Android con API nivel 26 o superior.
+
+## 🧪 Instalación y Ejecución
+
+1. Clonar el repositorio:
+
+   ```bash
+   git clone https://github.com/valeriavmr/DAM_PP.git
+   ```
+2. Abrir el proyecto en Android Studio.
+3. Sincronizar el proyecto con Gradle.
+4. Conectar un dispositivo o lanzar un emulador.
+5. Ejecutar la aplicación desde Android Studio.
+
+## 📂 Estructura del Proyecto
+
+* `app/` - Código fuente principal de la aplicación.
+
+  * `src/main/java/` - Archivos Kotlin.
+  * `src/main/res/` - Recursos de interfaz (layouts, drawables, strings).
+  * `AndroidManifest.xml` - Configuración de la app.
+* `build.gradle.kts` - Configuración del proyecto.
+* `gradle/` - Scripts de configuración adicionales.
+
+## 📄 Licencia
+
+Este proyecto es de uso educativo y no posee licencia comercial.
