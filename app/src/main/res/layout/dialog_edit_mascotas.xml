@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/fondo1"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/nombre_mascota_hint"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/editTextNombreMascota_edit"
+        android:layout_width="279dp"
+        android:layout_height="45dp"
+        android:background="@drawable/borde_redondo"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="@string/nombre_mascota_hint"
+        android:inputType="text"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/edad_mascota_hint"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/editTextEdadMascota_edit"
+        android:layout_width="279dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:hint="@string/edad_mascota_hint"
+        android:textSize="16sp"
+        android:background="@drawable/borde_redondo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/color_mascota_hint"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+
+    <Spinner
+        android:id="@+id/spinnerColorMascota_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@color/white"
+        android:minWidth="279dp"
+        android:minHeight="30dp"/>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/sexo_mascota_text"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <RadioGroup
+        android:id="@+id/rgSexoMascota_edit"
+        android:layout_width="177dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbMacho_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/mascota_M"/>
+
+        <RadioButton
+            android:id="@+id/rbHembra_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mascota_F" />
+
+    </RadioGroup>
+    <LinearLayout
+        android:id="@+id/botones_acciones_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_guardar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/guardar" />
+
+        <Button
+            android:id="@+id/btn_cancelar"
+            android:layout_width="wrap_content"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/cancelar" />
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

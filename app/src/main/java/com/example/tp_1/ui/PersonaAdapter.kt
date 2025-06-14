@@ -1,4 +1,4 @@
-package com.example.tp_1
+package com.example.tp_1.ui
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.tp_1.R
+import com.example.tp_1.datos.Persona
 
 class PersonaAdapter(private val lista_personas : List<Persona>)
     : RecyclerView.Adapter<PersonaAdapter.PersonaViewHolder>() {

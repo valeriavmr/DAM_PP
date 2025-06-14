@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".MascotasFragment">
+    tools:context=".fragments.MascotasFragment">
 
     <TextView
         android:id="@+id/textView4"
@@ -32,25 +32,40 @@
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="20dp"
         android:layout_weight="1"
-        app:layout_constraintBottom_toTopOf="@+id/button7"
+        app:layout_constraintBottom_toTopOf="@+id/floating_btn_add_mascota"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="match_parent"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_btn_add_mascota"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="73dp"
-        android:text="@string/text_add_mascota"
-        android:backgroundTint="@color/dark_blue"
+        android:layout_marginTop="620dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="39dp"
+        android:backgroundTint="@color/skyblye"
+        android:contentDescription="@string/text_add_mascota"
+        android:src="@drawable/add_mascota"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/floating_btn_delete_all"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_btn_delete_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="620dp"
+        android:layout_marginEnd="216dp"
+        android:layout_marginBottom="39dp"
+        android:backgroundTint="@color/skyblye"
+        android:contentDescription="@string/btn_del_mascotas"
+        android:src="@drawable/delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/floating_btn_add_mascota"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lista_mascotas" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

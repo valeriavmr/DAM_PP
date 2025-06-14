@@ -4,29 +4,38 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
+import com.example.tp_1.datos.DatabaseProvider
+import com.example.tp_1.fragments.AboutFragment
+import com.example.tp_1.fragments.AdiestramientoFragment
+import com.example.tp_1.fragments.BaniosFragment
+import com.example.tp_1.fragments.HomeFragment
+import com.example.tp_1.fragments.MascotasFragment
+import com.example.tp_1.fragments.PaseosFragment
+import com.example.tp_1.fragments.PerfilFragment
+import com.example.tp_1.fragments.UsersFragment
+import com.example.tp_1.fragments.VeterinarioFragment
 
 private lateinit var drawerLayout : DrawerLayout
 private lateinit var navView: NavigationView
 
 class HomeActivity : AppCompatActivity() {
+    val usuario_loggeado = "usuario_loggeado"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        //inicializo la base de datos
+        val db = DatabaseProvider.getDatabase(this)
 
     //configuro la toolbar y nav
         drawerLayout = findViewById(R.id.drawer_layout_home)
@@ -47,35 +56,20 @@ class HomeActivity : AppCompatActivity() {
 
         val user_name_nav = headerView.findViewById<TextView>(R.id.text_nombre_nav)
 
-        user_name_nav.text = intent.getStringExtra("usuario_loggeado")
+        val prefs = getSharedPreferences("sesion", MODE_PRIVATE)
+
+        val user_name = prefs.getString(usuario_loggeado,"")
+
+        user_name_nav.text = user_name
 
         //logica para personalizar segun genero
-        val personas_guardadas = intent.getStringExtra("personas")
-
-        //Transformo el json en una lista de personas
-        val gson = Gson()
-
-        var lista_personas = mutableListOf<Persona>()
-        if(personas_guardadas!=null && !personas_guardadas.isEmpty()){
-
-            val type = object : TypeToken<MutableList<Persona>>() {}.type
-            lista_personas = Gson().fromJson(personas_guardadas,type)
-
-        }
-
-        //Busco a la persona por user_name
-        var user_genero = ""
-        lista_personas.forEach { persona ->
-            if(persona.user_name.equals(intent.getStringExtra("usuario_loggeado"))){
-                user_genero = persona.genero
-            }
-        }
+        val persona_loggeada = db.personaDao().getPersonaPorUserName(user_name.toString())
 
         //Recupero el imageView del nav
         val nav_imagen = headerView.findViewById<ImageView>(R.id.nav_imagen)
 
         //personalizo segun genero
-        if (user_genero.equals("Femenino")){
+        if (persona_loggeada?.genero == resources.getString(R.string.genero_F)){
             nav_imagen.setImageResource(R.drawable.mascota)
         }else{
             nav_imagen.setImageResource(R.drawable.mascota__1)
@@ -86,13 +80,6 @@ class HomeActivity : AppCompatActivity() {
                 .replace(R.id.home_frameLayout, HomeFragment())
                 .commit()
         }
-
-        val sharedPref = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
-        val editor = sharedPref.edit()
-
-        editor.putString("personas", personas_guardadas)
-        editor.putString("usuario_loggeado",intent.getStringExtra("usuario_loggeado"))
-        editor.apply()
 
         navView.setNavigationItemSelectedListener { item ->
             //llamo a los fragments
@@ -107,15 +94,8 @@ class HomeActivity : AppCompatActivity() {
                 R.id.menu_home_veterinario ->{openFragment(VeterinarioFragment())}
                 R.id.menu_home_logout ->{
 
-                    //borro la data sobre el usuario loggeado y me voy a login
-                    val sharedPreferences = getSharedPreferences("MyPreferences",MODE_PRIVATE)
-                    val editor = sharedPreferences.edit()
-
-                    editor.remove("usuario_loggeado")
-                    editor.apply()
-
                     val intent = Intent(this, MainActivity::class.java)
-                    intent.putExtra("personas",sharedPreferences.getString("personas",""))
+                    intent.putExtra(usuario_loggeado,"")
 
                     startActivity(intent)
 
@@ -149,6 +129,25 @@ class HomeActivity : AppCompatActivity() {
             drawerLayout.isDrawerOpen(GravityCompat.START)
         } else {
             super.onBackPressed()
+        }
+    }
+
+    //Funcion que actualiza los datos del NavigationView cuando se cambia el username o genero
+    fun actualizarHeaderNavigationView(userName: String) {
+        val db = DatabaseProvider.getDatabase(this@HomeActivity)
+        val headerView = findViewById<NavigationView>(R.id.nav_view_home).getHeaderView(0)
+
+        val textViewNombre = headerView.findViewById<TextView>(R.id.text_nombre_nav)
+        val imgViewGenero = headerView.findViewById<ImageView>(R.id.nav_imagen)
+
+        val persona = db.personaDao().getPersonaPorUserName(userName)
+
+        textViewNombre.text = persona?.user_name ?: "Sin nombre"
+
+        if (persona?.genero == resources.getString(R.string.genero_F)){
+            imgViewGenero.setImageResource(R.drawable.mascota)
+        }else{
+            imgViewGenero.setImageResource(R.drawable.mascota__1)
         }
     }
 }

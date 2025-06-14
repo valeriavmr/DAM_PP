@@ -1,12 +1,13 @@
-package com.example.tp_1
+package com.example.tp_1.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import com.example.tp_1.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -65,7 +66,7 @@ class PaseosFragment : Fragment() {
         val btn_contacto = view.findViewById<Button>(R.id.button5)
 
         btn_contacto.setOnClickListener {
-            Toast.makeText(requireContext(), getString(R.string.solicitud_alerta),Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), getString(R.string.solicitud_alerta), Toast.LENGTH_LONG).show()
         }
     }
 }

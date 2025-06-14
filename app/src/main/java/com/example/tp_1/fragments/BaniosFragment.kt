@@ -1,15 +1,13 @@
-package com.example.tp_1
+package com.example.tp_1.fragments
 
-import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
+import android.widget.Button
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import com.example.tp_1.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,10 +16,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [UsersFragment.newInstance] factory method to
+ * Use the [BaniosFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class UsersFragment : Fragment() {
+class BaniosFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -39,7 +37,7 @@ class UsersFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_users, container, false)
+        return inflater.inflate(R.layout.fragment_banios, container, false)
     }
 
     companion object {
@@ -49,12 +47,12 @@ class UsersFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment UsersFragment.
+         * @return A new instance of fragment BaniosFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            UsersFragment().apply {
+            BaniosFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
@@ -65,16 +63,10 @@ class UsersFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val lista_personas_view = view.findViewById<RecyclerView>(R.id.lista_usuarios)
-        lista_personas_view.layoutManager = LinearLayoutManager(requireContext())
+        val btn_contacto = view.findViewById<Button>(R.id.button6)
 
-        //Me traigo a los usuarios registrados
-        val sharedPref = requireContext().getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
-        val gson = Gson()
-        var lista_personas = mutableListOf<Persona>()
-        val type = object : TypeToken<MutableList<Persona>>() {}.type
-        lista_personas = Gson().fromJson(sharedPref.getString("personas",""),type)
-
-        lista_personas_view.adapter = PersonaAdapter(lista_personas)
+        btn_contacto.setOnClickListener {
+            Toast.makeText(requireContext(), getString(R.string.cita_alerta), Toast.LENGTH_LONG).show()
+        }
     }
 }

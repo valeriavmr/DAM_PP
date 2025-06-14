@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="generos">
+        <item>Seleccione su género</item>
+        <item>Masculino</item>
+        <item>Femenino</item>
+    </string-array>
+    <string-array name="colores_mascota">
+        <item>Seleccione el color de su mascota</item>
+        <item>negro</item>
+        <item>blanco</item>
+        <item>manchado</item>
+        <item>rayado</item>
+        <item>dorado</item>
+        <item>gris</item>
+    </string-array>
+</resources>

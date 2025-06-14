@@ -43,4 +43,24 @@
     <string name="user_pass_error">Usuario o contraseña incorrectos</string>
     <string name="solicitud_alerta">"¡Solicitud agendada! Te contactaremos"</string>
     <string name="cita_alerta">"¡Cita agendada! Te contactaremos"</string>
+    <string name="mascota_details">Información de la mascota</string>
+    <string name="editar_btn">Editar</string>
+    <string name="eliminar_btn">Eliminar</string>
+    <string name="mascota_M">Macho</string>
+    <string name="mascota_F">Hembra</string>
+    <string name="guardar">Guardar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="color_mascota_hint">Seleccione el color de su mascota</string>
+    <string name="genero_F">Femenino</string>
+    <string name="select_gen">Seleccione su género</string>
+    <string name="btn_del_mascotas">Borrar mascotas</string>
+    <string name="err_campo_vacio">El campo no puede estar vacío</string>
+    <string name="err_campo_invalido">El valor ingresado es inválido</string>
+    <string name="user_existente">Nombre de usuario ya existente</string>
+    <string name="pass_invalida">La contraseña debe contener 8 caracteres y al menos un número</string>
+    <string name="email_existente">El email ya está asociado a otra cuenta</string>
+    <string name="err_mascota_existente">La persona ya tiene una mascota con este nombre</string>
+    <string name="toast_sel_gen">Por favor seleccione su género</string>
+    <string name="toast_sel_color">Por favor seleccione el color de su mascota</string>
+    <string name="toast_sel_sex_mascota">Debe seleccionar el sexo de la mascota</string>
 </resources>
