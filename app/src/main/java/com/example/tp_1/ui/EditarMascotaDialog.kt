@@ -105,11 +105,9 @@ class EditarMascotaDialog(private val mascota: Mascota,
         val sexoSeleccionadoId = rgSexoMascota.checkedRadioButtonId
 
         //nombre de la mascota
-        val mascotaNombre = db.mascotaDao().getMascotaByNombre(nombre_mascota,personaId)
         when{
             nombre_mascota.isBlank() -> ed_nombre_mascota.error = getString(R.string.err_campo_vacio)
             nombre_mascota.isDigitsOnly() -> ed_nombre_mascota.error = getString(R.string.err_campo_invalido)
-            mascotaNombre!=null -> ed_nombre_mascota.error = getString(R.string.err_mascota_existente)
             else -> camposValidos++
         }
 
